@@ -1,0 +1,21 @@
+.header{
+    margin: 10px;
+}
+
+.header-icon{
+    font-size: 50px;
+    background-color: whitesmoke;
+    margin: 0px 10px;
+    padding: 15px;
+    border-radius: 100%;
+    transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+}
+.header-icon:hover{
+    background-color: gold;
+}
+
+.call{
+    text-decoration: none;
+    color: gray;
+}
