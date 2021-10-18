@@ -1,6 +1,8 @@
 import React from 'react';
 import useServices from '../../hooks/useServices';
 import ServiceCard from '../serviceCard/ServiceCard';
+import ContactUs from './contactUs/ContactUs';
+import Emergency from './emergency/Emergency';
 
 import './Home.css';
 import Slider from './Slider/Slider';
@@ -22,7 +24,9 @@ const Home=() => {
                         key={service.id}
                         service={service}
                     ></ServiceCard>)
-                }
+                    }
+                    <ContactUs></ContactUs>
+                    <Emergency></Emergency>
             </div>
             </div>
 

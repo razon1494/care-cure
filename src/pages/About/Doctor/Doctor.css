@@ -1,0 +1,36 @@
+.instructor-card{
+    background-color:ghostwhite;
+    text-align: center;
+    margin: 40px 40px;
+    box-shadow: rgba(188, 143, 143, 0.4) 5px 5px, rgba(188, 143, 143, 0.3)10px 10px, rgba(188, 143, 143, 0.2) 15px 15px, rgba(188, 143, 143, 0.1)20px 20px, rgba(188, 143, 143, 0.05)25px 25px;
+    border: 1px solid rgba(188, 143, 143, 0.4);
+    border-radius: 10px;
+    transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+}
+.instructor-img{
+    border-radius: 100%;
+    padding: 15px;
+    height: 50%;
+}
+.instructor-name{
+    margin: 10px auto;
+    color: rgba(0, 0, 0, 0.616);
+    color: indigo
+}
+.instructor-post{
+    color: gray;
+}
+
+.instructor-card:hover{
+    background-color:white;
+     box-shadow: rgba(188, 143, 143, 0.4) -5px -5px , rgba(188, 143, 143, 0.3) -10px -10px, rgba(188, 143, 143, 0.2) -15px -15px , rgba(188, 143, 143,0.1) -20px -20px, rgba(188, 143, 143, 0.05) -25px -25px;
+
+}
+.instructor-card:hover h3{
+    color: DarkMagenta;
+    font-weight: bold;
+}
+.instructor-card:hover h5{
+    color: black;
+}

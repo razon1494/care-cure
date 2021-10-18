@@ -1,29 +1,58 @@
 import useAuth from './../../context/useAuth'
 import React, {useState} from 'react';
 import './Login.css';
-import {Link} from 'react-router-dom';
+import {Link, useLocation, useHistory} from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
+import {getAuth, signInWithEmailAndPassword} from '@firebase/auth';
 
-const Signup=() => {
-    const {signInUsingGoogle,user, handleRegistration, setEmail, email, setPassword, error,handleLogin, handleResetPw,logOut}=useAuth();
-    const [isLogin, setIsLogin]=useState(false);
+const Login=() => {
+    const {signInUsingGoogle,user, handleRegistration,HandleLogin, setEmail, email, setPassword,password,HandleRegistration, error,setError, handleResetPw,logOut}=useAuth();
+  const [isLogin, setIsLogin]=useState(false);
+  // setIsLogin(true);
     const handleEmailChange=e => {
     setEmail(e.target.value);
     console.log(email);
   }
   const handlePwChange=e => {
     setPassword(e.target.value);
-    }
-
+  }
+  //redirect google login
+  const location=useLocation();
+  const history=useHistory();
+  console.log('came from ', location.state?.from);
+  const redirect_uri=location.state?.from.pathname || '/home';
+  const handleGoogleLogin=() => {
+    signInUsingGoogle().then(result => {
+      history.push(redirect_uri);
+    })
+  }
+//handle login
+  const HandleLoginCheck=()=>{
+    console.log(email);
+    console.log(password);
+    const auth=getAuth();
+    console.log(typeof(email));
+signInWithEmailAndPassword(auth, email, password)
+  .then(result => {
+    const user=result.user;
+      console.log('user',user);
+    setError('');
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage=error.message;
+    console.log('error', errorMessage);
+    setError(errorMessage);
+  });
+  }
     return (
-        <div>
+        <div className='container'>
             <div className="signup m-5">
                 <form onSubmit={handleRegistration}>
 
-        <h2 className='text-success text-center'>Please login</h2>
-{!isLogin && <div className="row mb-3">
+        <h2 className='text-success text-center my-4'>Please login</h2>
 
-  </div>}
         <div className="row mb-3">
 
     <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
@@ -46,7 +75,7 @@ const Signup=() => {
     </div>
         </div>
         <div className="row mb-3 text-danger">{error}</div>
-        {user.email?<button onClick={logOut} type="submit" className="btn btn-light">Log Out</button>:<button onClick={handleLogin} className="btn btn-light">Log in</button>}
+            {user.email? <button onClick={logOut} type="submit" className="btn btn-light">Log Out</button>:<button type='' onClick={HandleLogin} className="btn btn-light">Log in</button>}
         <br />
                     <button onClick={handleResetPw} type="button" className="btn my-3 btn-outline-secondary btn-sm">Reset Password</button>
                     {
@@ -56,9 +85,9 @@ const Signup=() => {
 
 
             </div>
-            <button onClick={signInUsingGoogle} className='btn btn-secondary'>Google Sign In</button>
+            <button onClick={handleGoogleLogin} className='btn btn-secondary'>Google Sign In</button>
         </div>
     );
 };
 
-export default Signup;
+export default Login;

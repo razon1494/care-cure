@@ -1,0 +1,19 @@
+[
+    {
+        "key":0,
+        "name":"DR. ZIAUL KARIM",
+        "post":"MBBS,DTCD,FKIT( KOREA ), FCCP( USA )Chest & Medicine Specialist",
+        "img":"https://bdhealthsolution.com/wp-content/uploads/2016/09/DR.-ZIAUL-KARIM.jpg"},
+    {
+        "key":1,
+        "name":"DR. FARHANA RASHID SHUMI",
+        "post":"MBBS, DDV (BSMMU), FCPS (Dermatology & Venereology)",
+        "img":"https://www.lasertreat.com.bd/public/images/doctors/Dr.-Farhana-Rashid-Shumi.jpeg"
+    },
+    {
+        "key":2,
+        "name":"DR. SARKER MAHBUB AHMED SHAMIM",
+        "post":"MBBS, Dip. Derm (Glasgow, UK), Diploma in Aesthetic Medicine (USA), MCPS, FCPS (Dermatology)",
+        "img":"https://www.lasertreat.com.bd/public/images/doctors/DR.-SARKER-MAHBUB-AHMED-SHAMIM.jpeg"
+    }
+]

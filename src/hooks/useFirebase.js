@@ -1,12 +1,14 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged,createUserWithEmailAndPassword,  updateProfile,sendPasswordResetEmail } from "firebase/auth";
+import { getAuth, signInWithPopup,signInWithEmailAndPassword , GoogleAuthProvider, signOut, onAuthStateChanged,createUserWithEmailAndPassword,  updateProfile,sendPasswordResetEmail } from "firebase/auth";
 import { useState, useEffect } from 'react';
+import {useHistory, useLocation} from "react-router";
 import initializeAuthentication from './../Firebase/firebase.initialize';
 
 initializeAuthentication();
 
 const useFirebase=() => {
+  // const history=useLocation();
     const [user, setUser]=useState({});
-    const [isLoading, setIsLoading]=useState(true);
+    const [isLoading, setIsLoading]=useState(false);
     const [personName, setPersonName]=useState(null);
     const [error, setError]=useState('');
     const [password, setPassword]=useState('');
@@ -19,11 +21,8 @@ const useFirebase=() => {
         setIsLoading(true);
         const googleProvider=new GoogleAuthProvider();
 
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                setUser(result.user);
-            })
-            .finally(() => setIsLoading(false));
+      return signInWithPopup(auth, googleProvider);
+
     };
     //sign up with email pw
      const setUserName=() => {
@@ -39,29 +38,18 @@ const useFirebase=() => {
   // ...
 });
   }
-    const signInWithEmailAndPassword=(email, password) => {
-        createUserWithEmailAndPassword(auth, email, password)
-  .then(result => {
-    // Signed in
-      const user=result.user;
-      setError('');
-        setUserName();
-    // ...
-  })
-  .catch((error) => {
-    setError(error.message)
-    // ..
-  });
+    //Handle Log in
+    const HandleLogin=e => {
+      e.preventDefault();
+      console.log('email', email, "^", password);
+        ProcessLogin(email, password)
     }
-    //handle Log in
-    const handleLogin=e => {
+    // Handle registration
+  const HandleRegistration=e => {
+
         e.preventDefault();
-        processLogin(email, password)
-    }
-    // handle registration
-    const handleRegistration=e => {
-        e.preventDefault();
-        console.log('sign uped');
+      console.log('sign uped');
+      // const history=useHistory();
 
         if(password.length<6) {
             setError('Password must be at least 6 character long');
@@ -71,30 +59,40 @@ const useFirebase=() => {
             setError('Password enter at least two uppercase number');
             return;
         }
-        registerNewUser(email, password);
+      console.log(isLogin);
+      console.log(email, password);
+      isLogin? ProcessLogin(email, password) : RegisterNewUser(email, password);
+
     }
     //process login & regiister
-    const processLogin=(email, pw) => {
+  const ProcessLogin=(email, pw) => {
+    console.log(email, 'proc', pw);
     signInWithEmailAndPassword(auth, email, pw)
     .then(result => {
       const user=result.user;
+      setUser(user);
       console.log(user);
       console.log('Logged In');
       setError('');
+      window.location.href='/home';
     })
     .catch(error => setError(error.message))
-  }
-  const registerNewUser=(email, pw)=>{
+    }
+
+  const RegisterNewUser=(email, pw) => {
+// const history=useHistory();
     createUserWithEmailAndPassword(auth, email, pw)
       .then(result => {
         const user=result.user;
         console.log(user);
         setError('');
         setUserName();
+        window.location.href='/home';
       })
       .catch(error => {
       setError(error.message)
-    })
+      })
+
   }
 
     // observe user state change
@@ -110,7 +108,7 @@ const useFirebase=() => {
         });
         return () => unsubscribed;
     }, [])
-    const handleResetPw=()=>{
+    const HandleResetPw=()=>{
     const auth = getAuth();
 sendPasswordResetEmail(auth, email)
   .then(() => {
@@ -141,9 +139,10 @@ password,setPassword,
 signInUsingGoogle,
 setUserName,
 signInWithEmailAndPassword,
-        handleRegistration,
-handleLogin,
-handleResetPw,
+        HandleRegistration,
+HandleLogin,
+      HandleResetPw,
+ProcessLogin,
 logOut
     }
 }

@@ -14,6 +14,7 @@ import Footer from './pages/Footer/Footer'
 
 import AuthProvider, {AuthContext} from './context/AuthProvider';
 import Header from './pages/header/Header';
+import About from './pages/About/About';
 
 
 
@@ -43,7 +44,7 @@ function App() {
               <Signup></Signup>
             </Route>
           <Route path="/staffs">
-              <Staffs></Staffs>
+              <About></About>
             </Route>
           <Route path="/appointment">
               <Appointment></Appointment>

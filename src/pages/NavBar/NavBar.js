@@ -24,12 +24,12 @@ const NavBar = () => {
       <NavLink className='nav-items fs-6 px-3  py-2 fw-bold text-dark' to="/staffs">About us</NavLink>
       <NavLink className='nav-items fs-6 px-3  py-2 fw-bold text-dark' to="/services">Services</NavLink>
       <NavLink className='nav-items fs-6 px-3  py-2 fw-bold text-dark' to="/appointment">Appointment</NavLink>
-                            <NavLink className='nav-items fs-6 px-3  py-2 fw-bold text-dark' to="/member">Membership</NavLink>
+                            {/* <NavLink className='nav-items fs-6 px-3  py-2 fw-bold text-dark' to="/member">Membership</NavLink> */}
                             {user?.email ?
                             <Button onClick={logOut} className='nav-items fs-6 px-3  py-2 fw-bold text-dark' as={Link} to="/login" variant="light">Logout</Button> :
                             <Nav.Link className='nav-items fs-6 px-3  py-2 fw-bold text-dark' as={Link} to="/login">Login</Nav.Link>}
                         <Navbar.Text>
-                            <small>{user?.displayName}</small>
+                            <p className='text-danger fw-bold'>{user?.displayName}</p>
                         </Navbar.Text>
     </Nav>
   </Navbar.Collapse>
