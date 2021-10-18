@@ -6,7 +6,7 @@ import userEvent from '@testing-library/user-event';
 import {getAuth, signInWithEmailAndPassword} from '@firebase/auth';
 
 const Login=() => {
-    const {signInUsingGoogle,user, handleRegistration,HandleLogin, setEmail, email, setPassword,password,HandleRegistration, error,setError, handleResetPw,logOut}=useAuth();
+    const {signInUsingGoogle,user, handleRegistration,HandleLogin, setEmail, email,setIsLoading, setPassword,password,HandleRegistration, error,setError, handleResetPw,logOut}=useAuth();
   const [isLogin, setIsLogin]=useState(false);
   // setIsLogin(true);
     const handleEmailChange=e => {
@@ -24,27 +24,13 @@ const Login=() => {
   const handleGoogleLogin=() => {
     signInUsingGoogle().then(result => {
       history.push(redirect_uri);
-    })
+    }).finally(()=>setIsLoading(true))
   }
 //handle login
   const HandleLoginCheck=()=>{
-    console.log(email);
-    console.log(password);
-    const auth=getAuth();
-    console.log(typeof(email));
-signInWithEmailAndPassword(auth, email, password)
-  .then(result => {
-    const user=result.user;
-      console.log('user',user);
-    setError('');
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage=error.message;
-    console.log('error', errorMessage);
-    setError(errorMessage);
-  });
+    HandleLogin().then(result => {
+      history.push(redirect_uri)
+    })
   }
     return (
         <div className='container'>
@@ -77,15 +63,14 @@ signInWithEmailAndPassword(auth, email, password)
         <div className="row mb-3 text-danger">{error}</div>
             {user.email? <button onClick={logOut} type="submit" className="btn btn-light">Log Out</button>:<button type='' onClick={HandleLogin} className="btn btn-light">Log in</button>}
         <br />
-                    <button onClick={handleResetPw} type="button" className="btn my-3 btn-outline-secondary btn-sm">Reset Password</button>
-                    {
-                        user.email&&<h2>{user.displayName}</h2>
-                    }
+
+            <button onClick={handleGoogleLogin} className='btn btn-secondary me-3'>Google Sign In</button>
+            <button onClick={handleResetPw} type="button" className="btn my-3  btn-sm">Reset Password</button>
 </form>
 
 
             </div>
-            <button onClick={handleGoogleLogin} className='btn btn-secondary'>Google Sign In</button>
+
         </div>
     );
 };

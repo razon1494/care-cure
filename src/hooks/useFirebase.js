@@ -8,7 +8,7 @@ initializeAuthentication();
 const useFirebase=() => {
   // const history=useLocation();
     const [user, setUser]=useState({});
-    const [isLoading, setIsLoading]=useState(false);
+    const [isLoading, setIsLoading]=useState(true);
     const [personName, setPersonName]=useState(null);
     const [error, setError]=useState('');
     const [password, setPassword]=useState('');
@@ -41,7 +41,6 @@ const useFirebase=() => {
     //Handle Log in
     const HandleLogin=e => {
       e.preventDefault();
-      console.log('email', email, "^", password);
         ProcessLogin(email, password)
     }
     // Handle registration
@@ -107,7 +106,7 @@ const useFirebase=() => {
             setIsLoading(false);
         });
         return () => unsubscribed;
-    }, [])
+    }, [isLoading])
     const HandleResetPw=()=>{
     const auth = getAuth();
 sendPasswordResetEmail(auth, email)
@@ -142,7 +141,8 @@ signInWithEmailAndPassword,
         HandleRegistration,
 HandleLogin,
       HandleResetPw,
-ProcessLogin,
+      ProcessLogin,
+setIsLoading,
 logOut
     }
 }

@@ -17,17 +17,17 @@
 }
 
 .carousel2-text{
-    background-color:rgba(240, 255, 240, 0.623);
+    background-color:rgba(54,43,41, 0.75);
     border-radius: 15px;
 }
 .carousel2-title{
-    color:black;
+    color:goldenrod;
     font-size: 2.5rem;
     font-weight: 700;
 }
 .carousel2-p{
     font-size: 1.2rem;
-    color:forestgreen;
+    color:floralwhite;
     font-weight: bold;
 
 }
@@ -37,7 +37,7 @@
 }
 
 .carousel3-text{
-    background-color:rgba(0, 0, 0, 0.75);
+    background-color:rgba(149, 93, 67, 0.86);
     border-radius: 15px;
 }
 .carousel3-title{
