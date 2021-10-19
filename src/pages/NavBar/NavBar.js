@@ -12,7 +12,7 @@ const NavBar = () => {
   <Container>
             <Navbar.Brand>
               <NavLink  to='/home' className='navbar-title'>
-                <h4>Care & Cure</h4>
+                <h2 className='fw-bold'>Care & Cure</h2>
                 </NavLink>
   </Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />

@@ -7,7 +7,7 @@
 
 ## Funtions of the website are listed below
 
-- It is a single page application with 4 routing path.
+- It is a single page application with 7 routing path.
 
 ## Login Sign Up Method
 - in this website user can sign up & login using thei email password or google account.

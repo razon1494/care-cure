@@ -12,7 +12,7 @@ const ServiceCard=(props) => {
     }
     return (
         <div className="col-md-5  m-3 course">
-            <h3 className='code text-center'>Test No: {1000+id}</h3>
+            <h3 className='code text-center'>Test No: {100+id}</h3>
             <div className="">
                 <div className="img text-center">
                     <img className='img-fluid' src={photo_1} alt="" />

@@ -1,12 +1,12 @@
 
 .course{
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-    padding: 10px;
+    padding: 20px;
     border-radius: 5px;
 }
 .course:hover{
-    box-shadow: rgba(85, 107, 47, 0.8) 0px 2px 4px, rgba(85, 107, 47, 0.6) 0px 7px 13px -3px, rgba(85, 107, 47, 0.5) 0px -3px 0px inset;
-    background-color: rgba(85, 107, 47, 0.1);
+    box-shadow: rgba(135, 206, 250, 0.8) 0px 2px 4px, rgba(135, 206, 250, 0.6) 0px 7px 13px -3px, rgba(135, 206, 250, 0.5) 0px -3px 0px inset;
+    background-color: rgba(135, 206, 250, 0.1);
 }
 .code{
     text-decoration: underline overline;

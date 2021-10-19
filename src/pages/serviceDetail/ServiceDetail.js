@@ -184,7 +184,7 @@ const ServiceDetail=() => {
 
     return (
         <div className='container my-5 details'>
-            <h1 className='text-center my-4 testno'>Test No: {parseInt(id)+1000}</h1>
+            <h1 className='text-center my-4 testno'>Test No: {parseInt(id)+100}</h1>
             <div className="row container text-center">
             <div className="img col-md-4">
                     <img className='img-fluid' src={photo_1} alt="test"/>
