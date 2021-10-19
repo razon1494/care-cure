@@ -18,7 +18,7 @@ const ServiceCard=(props) => {
                     <img className='img-fluid' src={photo_1} alt="" />
                 </div>
             <div className="text  m-3">
-                <h3 className='text-center'>{test_name}</h3>
+                <h3 className='text-center course-name'>{test_name}</h3>
                 <div className=" mb-3">
             <p>Catagory: {catagory}</p>
                         <p>Charge : {price}/=</p>
