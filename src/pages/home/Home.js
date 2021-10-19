@@ -8,15 +8,14 @@ import './Home.css';
 import Slider from './Slider/Slider';
 const Home=() => {
     const [services]=useServices();
-    const popularServices=services.filter(service => service.price>=6100);
-    console.log(popularServices);
+    const popularServices=services.filter(service => service.price>=6000);
     return (
         <div>
             <div className="slider">
             <Slider />
             </div>
             <div className="home-title">
-                <h2 className='text-center fw-bold mt-3 '>Explore Our Most <span id='popular-courses'> Popular Services</span></h2>
+                <h2 className='text-center fw-bold mt-3 popular'>Explore Our Most <span id='popular-services'> Popular Services</span></h2>
                 <div className="popular-courses row mt-4 g-5 container justify-content-between mx-auto mb-4">
                 {
                     // showing popular courses

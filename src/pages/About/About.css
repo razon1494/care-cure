@@ -1,0 +1,10 @@
+.about h2{
+    font-weight: bold;
+    line-height: 60px;
+    color:saddlebrown;
+}
+.about-p{
+    text-align: justify;
+    color: gray;
+
+}

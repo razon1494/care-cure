@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import './ServiceCard.css';
 const ServiceCard=(props) => {
     const {service}=props;
-    const {id, catagory, test_name, photo_1, price}=service;
+    const {id, catagory, test_name, photo_1, price,summary}=service;
     const history=useHistory();
     const handleEnroll=() => {
         history.push(`/courses/${id}`);
@@ -13,17 +13,19 @@ const ServiceCard=(props) => {
     return (
         <div className="col-md-5  m-3 course">
             <h3 className='code text-center'>Test No: {1000+id}</h3>
-            <div className="d-md-flex">
-                <div className="img">
-                    <img src={photo_1} alt="" />
+            <div className="">
+                <div className="img text-center">
+                    <img className='img-fluid' src={photo_1} alt="" />
                 </div>
-            <div className="text m-3">
-                <h3>{test_name}</h3>
+            <div className="text  m-3">
+                <h3 className='text-center'>{test_name}</h3>
                 <div className=" mb-3">
             <p>Catagory: {catagory}</p>
-                        <p>Course Fee : {price}/=</p>
+                        <p>Charge : {price}/=</p>
+                        <p>{summary}</p>
+                        <div className='d-flex align-items-center justify-content-center '>
                         <Link to={`/services/${id}`}>
-                    <Button onClick={handleEnroll} variant="secondary">Details</Button></Link>
+                    <Button className='mt-3 px-4' variant="secondary">Details</Button></Link></div>
             </div>
 </div>
             </div>

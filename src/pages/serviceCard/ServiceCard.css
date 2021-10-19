@@ -14,8 +14,7 @@
 }
 
 .img img{
-    width: 150px;
-    height: 250px;
+    align-items: center;
 }
 .text h3{
     font-weight: 600;

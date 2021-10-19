@@ -1,0 +1,26 @@
+.ambulance-title{
+    color: saddlebrown;
+    font-weight: bolder;
+}
+
+
+.ambulance-text h2{
+    font-weight: bold;
+    color:indigo;
+}
+.ambulance-text h3{
+    font-weight: bold;
+    color:red;
+}
+.ambulance-text p{
+    color:gray;
+    text-align: justify;
+}
+.call-btn{
+    border: none;
+    background-color: indianred;
+    color: ivory;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}

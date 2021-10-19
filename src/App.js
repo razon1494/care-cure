@@ -5,9 +5,8 @@ import Services from './pages/services/Services';
 import ServiceDetail from './pages/serviceDetail/ServiceDetail';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
-import Staffs from './pages/staffs/Staffs';
 import Appointment from './pages/appointment/Appointment';
-import Success from './pages/success/Success';
+
 import NotFound from './pages/notfound/NotFound';
 import PrivateRoute from './pages/login/PrivateRoute/PrivateRoute';
 import Footer from './pages/Footer/Footer'
@@ -15,6 +14,7 @@ import Footer from './pages/Footer/Footer'
 import AuthProvider, {AuthContext} from './context/AuthProvider';
 import Header from './pages/header/Header';
 import About from './pages/About/About';
+import Book from './pages/Book/Book';
 
 
 
@@ -34,6 +34,9 @@ function App() {
              <PrivateRoute path="/services/:id">
               <ServiceDetail></ServiceDetail>
             </PrivateRoute>
+             <PrivateRoute path="/book">
+              <Book></Book>
+            </PrivateRoute>
           <Route path="/services">
               <Services></Services>
             </Route>
@@ -46,12 +49,10 @@ function App() {
           <Route path="/staffs">
               <About></About>
             </Route>
-          <Route path="/appointment">
+          <PrivateRoute path="/join">
               <Appointment></Appointment>
-            </Route>
-          <Route path="/success">
-                <Success></Success>
-            </Route>
+            </PrivateRoute>
+
 
 {/*           <PrivateRoute path="/inventory">
 

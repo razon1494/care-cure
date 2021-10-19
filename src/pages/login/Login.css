@@ -1,0 +1,33 @@
+.login{
+    min-height: 500px;
+}
+.login-title{
+    font-weight:bold ;
+    color:indigo;
+    line-height: 50px;
+}
+.login-email{
+    font-size: 23px;
+}
+.login-pw{
+    font-size: 23px;
+}
+.login-btn{
+    border:none;
+    background-color:goldenrod;
+    padding: 5px 35px;
+    color: ghostwhite;
+    font-size: 19px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.google-btn{
+    border:none;
+    margin: 10px;
+    background-color: orangered;
+    padding: 5px 35px;
+    color: white;
+    font-size: 19px;
+    border-radius: 5px;
+}

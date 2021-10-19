@@ -1,0 +1,17 @@
+.book{
+    background-color: rgb(253,253,253);
+    min-height: 800px;
+}
+.book-title{
+    color:rgba(70, 131, 180, 0.815);
+    font-weight: bolder;
+}
+.appointment h3{
+    color:olive;
+    line-height: 40px;
+}
+.appointment p{
+    color: DarkOliveGreen;
+    line-height: 25px;
+    font-size: 18px;
+}

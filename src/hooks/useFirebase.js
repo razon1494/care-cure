@@ -1,6 +1,5 @@
 import { getAuth, signInWithPopup,signInWithEmailAndPassword , GoogleAuthProvider, signOut, onAuthStateChanged,createUserWithEmailAndPassword,  updateProfile,sendPasswordResetEmail } from "firebase/auth";
 import { useState, useEffect } from 'react';
-import {useHistory, useLocation} from "react-router";
 import initializeAuthentication from './../Firebase/firebase.initialize';
 
 initializeAuthentication();
@@ -9,7 +8,7 @@ const useFirebase=() => {
   // const history=useLocation();
     const [user, setUser]=useState({});
     const [isLoading, setIsLoading]=useState(true);
-    const [personName, setPersonName]=useState(null);
+    const [personName, setPersonName]=useState('');
     const [error, setError]=useState('');
     const [password, setPassword]=useState('');
     const [isLogin, setIsLogin]=useState(false);
@@ -28,7 +27,7 @@ const useFirebase=() => {
      const setUserName=() => {
     const auth = getAuth();
     updateProfile(auth.currentUser, {
-        displayName: personName
+      displayName: personName
     })
   .then(() => {
   // Profile updated!
@@ -45,9 +44,7 @@ const useFirebase=() => {
     }
     // Handle registration
   const HandleRegistration=e => {
-
         e.preventDefault();
-      console.log('sign uped');
       // const history=useHistory();
 
         if(password.length<6) {
@@ -58,20 +55,15 @@ const useFirebase=() => {
             setError('Password enter at least two uppercase number');
             return;
         }
-      console.log(isLogin);
-      console.log(email, password);
       isLogin? ProcessLogin(email, password) : RegisterNewUser(email, password);
 
     }
     //process login & regiister
   const ProcessLogin=(email, pw) => {
-    console.log(email, 'proc', pw);
     signInWithEmailAndPassword(auth, email, pw)
     .then(result => {
       const user=result.user;
       setUser(user);
-      console.log(user);
-      console.log('Logged In');
       setError('');
       window.location.href='/home';
     })
@@ -83,7 +75,6 @@ const useFirebase=() => {
     createUserWithEmailAndPassword(auth, email, pw)
       .then(result => {
         const user=result.user;
-        console.log(user);
         setError('');
         setUserName();
         window.location.href='/home';
@@ -107,19 +98,22 @@ const useFirebase=() => {
         });
         return () => unsubscribed;
     }, [isLoading])
+
+  //paassword reset
     const HandleResetPw=()=>{
     const auth = getAuth();
 sendPasswordResetEmail(auth, email)
   .then(() => {
-    console.log("An email sent to your email");
+    setError("Please check your given mail to verify and reset pw");
   })
   .catch((error) => {
     const errorCode = error.code;
-    const errorMessage = error.message;
+    const errorMessage=error.message;
+    setError(errorMessage);
     // ..
   });
   }
-
+//sign out system
     const logOut = () => {
         setIsLoading(true);
         signOut(auth)
@@ -128,7 +122,7 @@ sendPasswordResetEmail(auth, email)
     }
 
     return {
-        user,setUser,
+user,setUser,
 email,setEmail,
 isLoading,
 personName,setPersonName,
@@ -138,10 +132,10 @@ password,setPassword,
 signInUsingGoogle,
 setUserName,
 signInWithEmailAndPassword,
-        HandleRegistration,
+HandleRegistration,
 HandleLogin,
-      HandleResetPw,
-      ProcessLogin,
+HandleResetPw,
+ProcessLogin,
 setIsLoading,
 logOut
     }

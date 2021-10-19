@@ -22,15 +22,14 @@ const Login2=() => {
     signInWithEmailAndPassword(auth, email, pw)
     .then(result => {
       const user=result.user;
-      console.log(user);
-      console.log('Logged In');
+
       setError('');
     })
     .catch(error => setError(error.message))
     }
     const handleEmailChange=e => {
     setEmail(e.target.value);
-    console.log(email);
+
     }
     const handlePwChange=e => {
     setPw(e.target.value);
@@ -43,7 +42,7 @@ const Login2=() => {
         sendEmailVerification(auth.currentUser)
             .then(() =>
                 result => {
-                    console.log(result);
+
                 }
             );
     }
@@ -51,7 +50,6 @@ const Login2=() => {
     const auth = getAuth();
 sendPasswordResetEmail(auth, email)
   .then(() => {
-    console.log("An email sent to your email");
   })
   .catch((error) => {
     const errorCode = error.code;

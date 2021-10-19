@@ -1,0 +1,25 @@
+.join{
+
+}
+.join h2{
+    color: rgba(46, 139, 86, 0.699);
+    font-weight: bolder;
+    line-height: 40px;
+    text-decoration: underline;
+}
+.join h3{
+    color: rgba(46, 139, 86, 0.699);
+    font-weight: bolder;
+    line-height: 40px;
+
+}
+.join p{
+    text-align: justify;
+    line-height: 28px;
+    color: gray;
+}
+.join li{
+    text-align: justify;
+    line-height: 28px;
+    color: gray;
+}

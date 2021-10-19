@@ -9,7 +9,7 @@ const Signup=() => {
   const location=useLocation();
     const HandleEmailChange=e => {
     setEmail(e.target.value);
-    console.log(email);
+
   }
   const HandlePwChange=e => {
     setPassword(e.target.value);
@@ -17,13 +17,10 @@ const Signup=() => {
     const HandleNameChange=e => {
     setPersonName(e.target.value);
   }
-  const toggleLogin=e => {
-    setIsLogin(e.target.checked);
-    console.log(isLogin);
-  }
+
 
   const history=useHistory();
-  console.log('came from ', location.state?.from);
+
   const redirect_uri=location.state?.from.pathname || '/home';
   const HandleGoogleLogin=() => {
     signInUsingGoogle().then(result => {
@@ -31,27 +28,27 @@ const Signup=() => {
     })
   }
     return (
-        <div>
-            <div className="signup m-5">
+        <div className='container signup'>
+            <div className=" m-5 ">
                 <form onSubmit={HandleRegistration}>
 
-        <h2 className='text-success text-center'>Please {isLogin? 'login':'Register'}</h2>
-{!isLogin && <div className="row mb-3">
-          <label htmlFor="inputAddress" className="form-label col-sm-2">Name</label>
+        <h2 className='text-success text-center my-4 fw-bold'>Please Register Here</h2>
+<div className="row mb-3 ">
+          <label htmlFor="inputAddress" className="form-label col-sm-2 signup-text">Name</label>
           <div className="col-sm-10">
     <input type="text" onBlur={HandleNameChange} className="form-control" id="inputAddress" placeholder="Your Name"/></div>
-  </div>}
+  </div>
         <div className="row mb-3">
 
-    <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
+    <label htmlFor="inputEmail3" className="col-sm-2 col-form-label signup-text">Email</label>
     <div className="col-sm-10">
-      <input onBlur={HandleEmailChange} type="email" className="form-control" id="inputEmail3" required/>
+      <input onBlur={HandleEmailChange} type="email" className="form-control" id="inputEmail3" placeholder='your email' required/>
     </div>
   </div>
   <div className="row mb-3">
-    <label htmlFor="inputPassword3" className="col-sm-2 col-form-label">Password</label>
+    <label htmlFor="inputPassword3" className="col-sm-2 col-form-label signup-text">Password</label>
     <div className="col-sm-10">
-            <input onBlur={HandlePwChange} type="password" className="form-control" id="inputPassword3" required/>
+            <input onBlur={HandlePwChange} type="password" placeholder='password must be more than 6 character with 2 capital letters' className="form-control" id="inputPassword3" required/>
     </div>
   </div>
 
@@ -63,14 +60,14 @@ const Signup=() => {
     </div>
         </div>
         <div className="row mb-3 text-danger">{error}</div>
-        <button type="submit" className="btn btn-primary">Register</button>
-        <br />
-        <button onClick={HandleResetPw} type="button" className="btn my-3 btn-outline-secondary btn-sm">Reset Password</button>
+        <button type="submit" className="btn btn-primary me-3 mt-3">Register</button>
+         <button onClick={HandleGoogleLogin} className='btn btn-danger me-3 mt-3' >Google Sign In</button>
+        <button onClick={HandleResetPw} type="button" className="btn  btn-outline-secondary  me-3 mt-3">Reset Password</button>
 </form>
 
 
             </div>
-            <button onClick={HandleGoogleLogin} className='btn btn-secondary'>Google Sign In</button>
+
         </div>
     );
 };

@@ -29,7 +29,7 @@ const HeaderTop = () => {
             </div>
             <div className="call-now">
                 <p className='call'>
-                    <FontAwesomeIcon className='text-dark' icon={faClock}/><span className='fw-bold text-dark'> Open Hours:  </span> Sat-Thu 9am-6pm
+                    <FontAwesomeIcon className='text-dark' icon={faClock}/><span className='fw-bold text-dark'> Open Hours:  </span> Every Day 7am-11:59pm
                 </p>
                 </div>
                 </div>

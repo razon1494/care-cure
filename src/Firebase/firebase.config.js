@@ -1,4 +1,5 @@
-const firebaseConfig = {
+//firebase configartion, tried for environment variable it creates some problems so direct config using.
+const firebaseConfig={
   apiKey: "AIzaSyAriejhFGxh0P0tFnZrSOx9Jigmlx76FwA",
   authDomain: "health-care-assignment-10.firebaseapp.com",
   projectId: "health-care-assignment-10",

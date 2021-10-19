@@ -16,7 +16,7 @@ const Slider=() => {
       alt="First slide"
     />
     <Carousel.Caption className='carousel1-text'>
-      <h3 className='carousel1-title'>Accurate Results by our <span id='sunnah'> letest lab equipments</span></h3>
+      <h3 className='carousel1-title'>Accurate Results by our <span id='lab'> letest lab equipments</span></h3>
       <p className='carousel1-p'>Our equipments are very high quality and latest so you will get the best result.</p>
     </Carousel.Caption>
   </Carousel.Item>
@@ -28,7 +28,7 @@ const Slider=() => {
     />
 
     <Carousel.Caption className='carousel2-text'>
-      <h3 className='carousel2-title'>Unblieveable <span id='quran'>Discount</span>  For Members </h3>
+      <h3 className='carousel2-title'>Unblieveable <span id='discount'>Discount</span>  For Members </h3>
       <p className='carousel2-p'>Be our social member and you will get 20-40% discount on every test </p>
     </Carousel.Caption>
   </Carousel.Item>

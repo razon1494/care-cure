@@ -1,0 +1,23 @@
+.details{
+    min-height: 500px;
+}
+.img{
+
+}
+.testno{
+    color: gray;
+}
+.test h1{
+    color:rgba(139, 69, 19, 0.664);
+    font-weight: bolder;
+}
+.test h3{
+    color: gray;
+}
+.test h4{
+    color: maroon;
+
+}
+.test p{
+    text-align: justify;
+}

@@ -12,7 +12,7 @@ const NavBar = () => {
   <Container>
             <Navbar.Brand>
               <NavLink  to='/home' className='navbar-title'>
-                <h2>Care & Cure</h2>
+                <h4>Care & Cure</h4>
                 </NavLink>
   </Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -23,10 +23,12 @@ const NavBar = () => {
       <NavLink className='nav-items fs-6 px-3  py-2 fw-bold text-dark' to='/home'>Home</NavLink>
       <NavLink className='nav-items fs-6 px-3  py-2 fw-bold text-dark' to="/staffs">About us</NavLink>
       <NavLink className='nav-items fs-6 px-3  py-2 fw-bold text-dark' to="/services">Services</NavLink>
-      <NavLink className='nav-items fs-6 px-3  py-2 fw-bold text-dark' to="/appointment">Appointment</NavLink>
-                            {/* <NavLink className='nav-items fs-6 px-3  py-2 fw-bold text-dark' to="/member">Membership</NavLink> */}
+      <NavLink className='nav-items fs-6 px-3  py-2 fw-bold text-dark' to="/book">Appointment</NavLink>
+                <NavLink className='nav-items fs-6 px-3  py-2 fw-bold text-dark' to="/join">Join Us</NavLink>
+
+                            {!user.email && <NavLink className='nav-items fs-6 px-3  py-2 fw-bold text-dark' to="/signup">Sign Up</NavLink>}
                             {user?.email ?
-                            <Button onClick={logOut} className='nav-items fs-6 px-3  py-2 fw-bold text-dark' as={Link} to="/login" variant="light">Logout</Button> :
+                            <Button onClick={logOut} className='nav-items fs-6 px-3  py-2 fw-bold text-dark text-start' as={Link} to="/login" variant="light">Logout</Button> :
                             <Nav.Link className='nav-items fs-6 px-3  py-2 fw-bold text-dark' as={Link} to="/login">Login</Nav.Link>}
                         <Navbar.Text>
                             <p className='text-danger fw-bold'>{user?.displayName}</p>

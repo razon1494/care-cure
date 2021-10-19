@@ -4,8 +4,9 @@ import {Link} from 'react-router-dom';
 import './ContactUs.css';
 const ContactUs=() => {
     return (
-        <div>
-        <h2>Contact Us</h2>
+        <div className='contact-us-container p-3 border rounded-3'>
+        <h2 className='text-center contact-title' >Contact Us</h2>
+        {/* responsive contact us form */}
 <Form>
   <Row className="mb-3">
     <Form.Group as={Col} controlId="formGridEmail">
@@ -25,12 +26,12 @@ const ContactUs=() => {
       style={{ height: '100px' }}
     />
   </FloatingLabel>
-  <Link to='/home'><Button variant="success" className='my-3'>
+  <Link to='/'><Button variant="success" className='my-3'>
     Submit
   </Button></Link>
 </Form>
 
-        </div>
+</div>
     );
 };
 
