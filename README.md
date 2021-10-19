@@ -1,4 +1,4 @@
-# Cure & Care
+# Care & Cure
 ## The website is live in this link : https://health-care-assignment-10.web.app/
 ## A diagonestic center website
 
