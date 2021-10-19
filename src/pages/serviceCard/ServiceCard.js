@@ -11,7 +11,7 @@ const ServiceCard=(props) => {
         history.push(`/courses/${id}`);
     }
     return (
-        <div className="col-md-5  m-3 course">
+        <div className="col-md-3  m-3 course">
             <h3 className='code text-center'>Test No: {100+id}</h3>
             <div className="">
                 <div className="img text-center">
