@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Cure & Care
+## The website is live in this link : https://health-care-assignment-10.web.app/
+## A diagonestic center website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `yarn start`
+## Funtions of the website are listed below
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- It is a single page application with 4 routing path.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Login Sign Up Method
+- in this website user can sign up & login using thei email password or google account.
+- To sign up for email password, name is a must given input.
+- user can toggle login sign up.
 
-### `yarn test`
+#### Landing Page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- In the landing page you will get an overview of our institutions.
+- At top all our address and contact information is given in home page.
+- Then a menu bar with all routings.
+- A banner with slider
+- In this page you will see some of our most popular services.
+- There are two extra part one is for hiring ambulance and other is to contact us.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### About Page
+- In This page you will know about the mission and visions of our organization.
+- Then there is portion to show doctors and book them.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Premium Courses
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Here All of our services listed.
+- You can see details by clicking the details button.
+- to see details you must have to login
 
-### `yarn eject`
+#### Appointment
+- Steps are shown how to book a doctor appointment.
+- it is a private route. so to see details login is pre requisite.
+#### Join Us
+- Job advertisements are shown in this page.
+- it is also a private route. so to see details login is pre requisite.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
